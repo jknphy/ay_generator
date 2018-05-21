@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+    <!-- minimal autoyast profile -->
+    <reg_code>30452ce234918d23</reg_code><reg_server>http://all-620.2.proxy.scc.suse.de</reg_server>
+      <do_registration config:type="boolean">true</do_registration>
+      <email/>
+      <reg_code>30452ce234918d23</reg_code>
+      <install_updates config:type="boolean">true</install_updates>
+      <reg_server>http://all-620.2.proxy.scc.suse.de</reg_server>
+      <addons config:type="list">
+        <addon>
+          <name>sle-module-basesystem</name>
+          <version>15</version>
+          <arch>ppc64le</arch>
+        </addon>
+        
+        <addon>
+        <name>sle-module-desktop-applications</name>
+          <version>15</version>
+          <arch>ppc64le</arch>
+        </addon>
+      </addons>
+    
+    <networking>
+        <keep_install_network config:type="boolean">true</keep_install_network>
+    </networking>
+    <software>
+      <packages config:type="list">
+        <package>glibc</package>
+        <package>grub2</package>
+        <package>snapper</package>
+        <package>syslinux</package>
+        <package>kdump</package>
+        <package>sles-release</package>
+        <package>kexec-tools</package>
+      </packages>
+      <patterns config:type="list">
+        <pattern>apparmor</pattern>
+        <pattern>base</pattern>
+        <pattern>basesystem</pattern>
+        <pattern>documentation</pattern>
+        <pattern>enhanced_base</pattern>
+        <pattern>gnome_basic</pattern>
+        <pattern>gnome_basis</pattern>
+        <pattern>minimal_base</pattern>
+        <pattern>x11</pattern>
+        <pattern>x11_enhanced</pattern>
+      </patterns>
+      <products config:type="list">
+        <product>SLES</product>
+      </products>
+    </software>
+    <users config:type="list">
+        <user>
+            <fullname>Bernhard M. Wiedemann</fullname>
+            <encrypted config:type="boolean">false</encrypted>
+            <user_password>nots3cr3t</user_password>
+            <username>bernhard</username>
+        </user>
+        <user>
+            <encrypted config:type="boolean">false</encrypted>
+            <user_password>nots3cr3t</user_password>
+            <username>root</username>
+        </user>
+    </users>
+    <report>
+      <errors>
+        <log config:type="boolean">true</log>
+        <show config:type="boolean">true</show>
+        <timeout config:type="integer">0</timeout>
+      </errors>
+      <messages>
+        <log config:type="boolean">true</log>
+        <show config:type="boolean">true</show>
+        <timeout config:type="integer">0</timeout>
+      </messages>
+      <warnings>
+        <log config:type="boolean">true</log>
+        <show config:type="boolean">true</show>
+        <timeout config:type="integer">0</timeout>
+      </warnings>
+      <yesno_messages>
+        <log config:type="boolean">true</log>
+        <show config:type="boolean">true</show>
+        <timeout config:type="integer">0</timeout>
+      </yesno_messages>
+    </report>
+</profile>
