@@ -12,10 +12,14 @@
   Summary:
   Maintainer: Joaquín Rivera <jeriveramoya@suse.com>
 -->
-<xsl:stylesheet xmlns:y="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns="http://www.suse.com/1.0/yast2ns" version="2.0">
-
-  <xsl:output method="xml" cdata-section-elements="source"/>
+<xsl:stylesheet xmlns:y="http://www.suse.com/1.0/yast2ns"
+                xmlns:config="http://www.suse.com/1.0/configns"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns="http://www.suse.com/1.0/yast2ns"
+                version="2.0">
+                
+  <xsl:strip-space elements="*"/>
+  <xsl:output method="xml" omit-xml-declaration="yes" indent="yes" cdata-section-elements="source" />
 
   <xsl:param name="scc_regcode" select="'UNDEFINED'" />
   <xsl:param name="scc_url" select="'UNDEFINED'" />
@@ -41,19 +45,13 @@
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="/y:profile/y:suse_register">
-    <xsl:apply-templates select = "y:reg_code" />
-    <xsl:apply-templates select = "y:reg_server" />
-    <xsl:apply-templates/>
-  </xsl:template>
-
-  <xsl:template match="y:reg_code">
+  <xsl:template match="/y:profile/y:suse_register/y:reg_code">
     <xsl:copy>
       <xsl:value-of select="$scc_regcode" />
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="y:reg_server">
+  <xsl:template match="/y:profile/y:suse_register/y:reg_server">
     <xsl:copy>
       <xsl:value-of select="$scc_url" />
     </xsl:copy>

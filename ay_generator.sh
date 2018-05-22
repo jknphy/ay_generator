@@ -24,8 +24,7 @@ saxon9 autoinst.xml autoinst.xsl \
        arch=ppc64le \
        scc_regcode=30452ce234918d23 \
        scc_url=http://all-620.2.proxy.scc.suse.de \
-       arch=ppc64le \
-       scc_addons=bs,desktop > ay_profile.xml
+       scc_addons=bs,desktop >  ay_profile.xml
 if [ $? -ne 0 ]; then
   echo "Error while preparing autoYasT file" >&2
   exit 1
